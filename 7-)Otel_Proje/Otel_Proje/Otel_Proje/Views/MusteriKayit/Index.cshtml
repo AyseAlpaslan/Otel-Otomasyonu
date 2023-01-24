@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Otel_Proje.Models.MusteriKayit>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared1/_LayoutPageadmin.cshtml";
+}
+
+@*<h4>Personel Listele</h4>*@
+
+
+<p>
+    @Html.ActionLink("Musteri Oluştur", "Yeni", null, new { @class = "btn btn-success" })
+
+</p>
+
+<br />
+
+<table class="table-bordered alert-warning col-md-6">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(Model => Model.MAdi)
+            @*//kolonları getirir*@
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(Model => Model.MSoyadi)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(Model => Model.MCinsiyet)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(Model => Model.MAdres)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(Model => Model.Telefon)
+        </th>
+
+        <th>
+
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(Model => item.MAdi)
+        @*//verileri getirir*@
+    </td>
+
+    <td>
+        @Html.DisplayFor(Model => item.MSoyadi)
+    </td>
+
+    <td>
+        @Html.DisplayFor(Model => item.MCinsiyet)
+    </td>
+    <td>
+        @Html.DisplayFor(Model => item.MAdres)
+    </td>
+    <td>
+        @Html.DisplayFor(Model => item.Telefon)
+    </td>
+    
+
+    <td>
+        @Html.ActionLink("Düzenle", "Duzenle", new { id = item.Mno }, new { @class = "btn btn-success" })
+        @Html.ActionLink("Sil", "Sil", new { id = item.Mno }, new { @class = "btn btn-success" })
+    </td>
+</tr>
+
+    }
+
+</table>
+
+
+

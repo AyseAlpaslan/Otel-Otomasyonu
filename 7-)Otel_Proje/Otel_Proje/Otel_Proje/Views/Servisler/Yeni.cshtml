@@ -1,0 +1,56 @@
+﻿@model Otel_Proje.Models.Servisler
+@{
+    ViewBag.Title = "Yeni";
+    Layout = "~/Views/Shared1/_LayoutPageadmin.cshtml";
+}
+
+
+<h2>SERVİS EKLEME ALANI</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @*tüm messageforlar'a gelen verileri kontrol eder*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.ServisAdi, htmlAttributes: new { @class = "control-label  col-md-2" })
+            <div class="col-md-4">
+
+                @Html.EditorFor(model => model.ServisAdi, new { htmlAttributes = new { @class = "form-control  alert-warning " } })
+                @Html.ValidationMessageFor(model => model.ServisAdi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ServisUcret, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.ServisUcret, new { htmlAttributes = new { @class = "form-control alert-warning" } })
+                @Html.ValidationMessageFor(model => model.ServisUcret, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <br />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("AnaSayfa", "Index")
+</div>
+
+
+
+
+
+

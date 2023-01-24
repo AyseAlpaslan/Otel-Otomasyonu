@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OtelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="MusteriHesabi">
+    <Key>
+      <PropertyRef Name="IslemNo" />
+    </Key>
+    <Property Name="IslemNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SonHesap" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="GirisTarihi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CikisTarihi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KisiSayisi" Type="Int32" />
+    <Property Name="OdaNo" Type="Int32" />
+    <Property Name="MNo" Type="Int32" />
+    <NavigationProperty Name="MusteriKayit" Relationship="Self.FK_MusteriHesabi_MusteriKayit" FromRole="MusteriHesabi" ToRole="MusteriKayit" />
+    <NavigationProperty Name="Odalar" Relationship="Self.FK_MusteriHesabi_Odalar" FromRole="MusteriHesabi" ToRole="Odalar" />
+  </EntityType>
+  <EntityType Name="MusteriKayit">
+    <Key>
+      <PropertyRef Name="Mno" />
+    </Key>
+    <Property Name="Mno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MSoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MCinsiyet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAdres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MusteriHesabis" Relationship="Self.FK_MusteriHesabi_MusteriKayit" FromRole="MusteriKayit" ToRole="MusteriHesabi" />
+  </EntityType>
+  <EntityType Name="Odalar">
+    <Key>
+      <PropertyRef Name="OdaNo" />
+    </Key>
+    <Property Name="OdaNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OdaFiyat" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="YatakSayisi" Type="Int32" />
+    <Property Name="OdaTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServisNo" Type="Int32" />
+    <NavigationProperty Name="MusteriHesabis" Relationship="Self.FK_MusteriHesabi_Odalar" FromRole="Odalar" ToRole="MusteriHesabi" />
+    <NavigationProperty Name="Servisler" Relationship="Self.FK_Odalar_Servisler" FromRole="Odalar" ToRole="Servisler" />
+  </EntityType>
+  <EntityType Name="Servisler">
+    <Key>
+      <PropertyRef Name="ServisNo" />
+    </Key>
+    <Property Name="ServisNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServisAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServisUcret" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Odalars" Relationship="Self.FK_Odalar_Servisler" FromRole="Servisler" ToRole="Odalar" />
+  </EntityType>
+  <EntityType Name="UserMaster">
+    <Key>
+      <PropertyRef Name="Uid1" />
+    </Key>
+    <Property Name="Uid1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="Role" Type="Int32" />
+    <Property Name="createdon" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK_MusteriHesabi_MusteriKayit">
+    <End Role="MusteriKayit" Type="Self.MusteriKayit" Multiplicity="0..1" />
+    <End Role="MusteriHesabi" Type="Self.MusteriHesabi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MusteriKayit">
+        <PropertyRef Name="Mno" />
+      </Principal>
+      <Dependent Role="MusteriHesabi">
+        <PropertyRef Name="MNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MusteriHesabi_Odalar">
+    <End Role="Odalar" Type="Self.Odalar" Multiplicity="0..1" />
+    <End Role="MusteriHesabi" Type="Self.MusteriHesabi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Odalar">
+        <PropertyRef Name="OdaNo" />
+      </Principal>
+      <Dependent Role="MusteriHesabi">
+        <PropertyRef Name="OdaNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Odalar_Servisler">
+    <End Role="Servisler" Type="Self.Servisler" Multiplicity="0..1" />
+    <End Role="Odalar" Type="Self.Odalar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servisler">
+        <PropertyRef Name="ServisNo" />
+      </Principal>
+      <Dependent Role="Odalar">
+        <PropertyRef Name="ServisNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OtelEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MusteriHesabis" EntityType="Self.MusteriHesabi" />
+    <EntitySet Name="MusteriKayits" EntityType="Self.MusteriKayit" />
+    <EntitySet Name="Odalars" EntityType="Self.Odalar" />
+    <EntitySet Name="Servislers" EntityType="Self.Servisler" />
+    <EntitySet Name="UserMasters" EntityType="Self.UserMaster" />
+    <AssociationSet Name="FK_MusteriHesabi_MusteriKayit" Association="Self.FK_MusteriHesabi_MusteriKayit">
+      <End Role="MusteriKayit" EntitySet="MusteriKayits" />
+      <End Role="MusteriHesabi" EntitySet="MusteriHesabis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MusteriHesabi_Odalar" Association="Self.FK_MusteriHesabi_Odalar">
+      <End Role="Odalar" EntitySet="Odalars" />
+      <End Role="MusteriHesabi" EntitySet="MusteriHesabis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Odalar_Servisler" Association="Self.FK_Odalar_Servisler">
+      <End Role="Servisler" EntitySet="Servislers" />
+      <End Role="Odalar" EntitySet="Odalars" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

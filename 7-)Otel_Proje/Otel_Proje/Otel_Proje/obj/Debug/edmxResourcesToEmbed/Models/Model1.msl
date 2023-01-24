@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OtelModelStoreContainer" CdmEntityContainer="OtelEntities3">
+    <EntitySetMapping Name="MusteriHesabis">
+      <EntityTypeMapping TypeName="OtelModel.MusteriHesabi">
+        <MappingFragment StoreEntitySet="MusteriHesabi">
+          <ScalarProperty Name="IslemNo" ColumnName="IslemNo" />
+          <ScalarProperty Name="SonHesap" ColumnName="SonHesap" />
+          <ScalarProperty Name="GirisTarihi" ColumnName="GirisTarihi" />
+          <ScalarProperty Name="CikisTarihi" ColumnName="CikisTarihi" />
+          <ScalarProperty Name="KisiSayisi" ColumnName="KisiSayisi" />
+          <ScalarProperty Name="OdaNo" ColumnName="OdaNo" />
+          <ScalarProperty Name="MNo" ColumnName="MNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MusteriKayits">
+      <EntityTypeMapping TypeName="OtelModel.MusteriKayit">
+        <MappingFragment StoreEntitySet="MusteriKayit">
+          <ScalarProperty Name="Mno" ColumnName="Mno" />
+          <ScalarProperty Name="MAdi" ColumnName="MAdi" />
+          <ScalarProperty Name="MSoyadi" ColumnName="MSoyadi" />
+          <ScalarProperty Name="MCinsiyet" ColumnName="MCinsiyet" />
+          <ScalarProperty Name="MAdres" ColumnName="MAdres" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Odalars">
+      <EntityTypeMapping TypeName="OtelModel.Odalar">
+        <MappingFragment StoreEntitySet="Odalar">
+          <ScalarProperty Name="OdaNo" ColumnName="OdaNo" />
+          <ScalarProperty Name="OdaFiyat" ColumnName="OdaFiyat" />
+          <ScalarProperty Name="YatakSayisi" ColumnName="YatakSayisi" />
+          <ScalarProperty Name="OdaTuru" ColumnName="OdaTuru" />
+          <ScalarProperty Name="ServisNo" ColumnName="ServisNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servislers">
+      <EntityTypeMapping TypeName="OtelModel.Servisler">
+        <MappingFragment StoreEntitySet="Servisler">
+          <ScalarProperty Name="ServisNo" ColumnName="ServisNo" />
+          <ScalarProperty Name="ServisAdi" ColumnName="ServisAdi" />
+          <ScalarProperty Name="ServisUcret" ColumnName="ServisUcret" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserMasters">
+      <EntityTypeMapping TypeName="OtelModel.UserMaster">
+        <MappingFragment StoreEntitySet="UserMaster">
+          <ScalarProperty Name="Uid1" ColumnName="Uid1" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Password1" ColumnName="Password1" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

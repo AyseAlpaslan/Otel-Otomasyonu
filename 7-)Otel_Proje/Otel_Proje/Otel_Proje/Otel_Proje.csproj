@@ -1,0 +1,835 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C0A1A73-40A6-46C4-A1DF-4C2144E011A3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Otel_Proje</RootNamespace>
+    <AssemblyName>Otel_Proje</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44346</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admintema\assets\css\material-dashboard.css" />
+    <Content Include="admintema\assets\css\material-dashboard.min.css" />
+    <Content Include="admintema\assets\css\nucleo-icons.css" />
+    <Content Include="admintema\assets\css\nucleo-svg.css" />
+    <Content Include="admintema\assets\fonts\nucleo-icons.svg" />
+    <Content Include="admintema\assets\img\apple-icon.png" />
+    <Content Include="admintema\assets\img\bg-pricing.jpg" />
+    <Content Include="admintema\assets\img\bg-smart-home-1.jpg" />
+    <Content Include="admintema\assets\img\bg-smart-home-2.jpg" />
+    <Content Include="admintema\assets\img\bruce-mars.jpg" />
+    <Content Include="admintema\assets\img\down-arrow-dark.svg" />
+    <Content Include="admintema\assets\img\down-arrow-white.svg" />
+    <Content Include="admintema\assets\img\down-arrow.svg" />
+    <Content Include="admintema\assets\img\drake.jpg" />
+    <Content Include="admintema\assets\img\favicon.png" />
+    <Content Include="admintema\assets\img\home-decor-1.jpg" />
+    <Content Include="admintema\assets\img\home-decor-2.jpg" />
+    <Content Include="admintema\assets\img\home-decor-3.jpg" />
+    <Content Include="admintema\assets\img\icons\flags\AU.png" />
+    <Content Include="admintema\assets\img\icons\flags\BR.png" />
+    <Content Include="admintema\assets\img\icons\flags\DE.png" />
+    <Content Include="admintema\assets\img\icons\flags\GB.png" />
+    <Content Include="admintema\assets\img\icons\flags\US.png" />
+    <Content Include="admintema\assets\img\illustrations\chat.png" />
+    <Content Include="admintema\assets\img\illustrations\danger-chat-ill.png" />
+    <Content Include="admintema\assets\img\illustrations\dark-lock-ill.png" />
+    <Content Include="admintema\assets\img\illustrations\error-404.png" />
+    <Content Include="admintema\assets\img\illustrations\error-500.png" />
+    <Content Include="admintema\assets\img\illustrations\illustration-lock.jpg" />
+    <Content Include="admintema\assets\img\illustrations\illustration-reset.jpg" />
+    <Content Include="admintema\assets\img\illustrations\illustration-signin.jpg" />
+    <Content Include="admintema\assets\img\illustrations\illustration-signup.jpg" />
+    <Content Include="admintema\assets\img\illustrations\illustration-verification.jpg" />
+    <Content Include="admintema\assets\img\illustrations\lock.png" />
+    <Content Include="admintema\assets\img\illustrations\pattern-tree.svg" />
+    <Content Include="admintema\assets\img\illustrations\rocket-white.png" />
+    <Content Include="admintema\assets\img\ivana-square.jpg" />
+    <Content Include="admintema\assets\img\ivana-squares.jpg" />
+    <Content Include="admintema\assets\img\ivancik.jpg" />
+    <Content Include="admintema\assets\img\kal-visuals-square.jpg" />
+    <Content Include="admintema\assets\img\logo-ct-dark.png" />
+    <Content Include="admintema\assets\img\logo-ct.png" />
+    <Content Include="admintema\assets\img\logos\gray-logos\logo-coinbase.svg" />
+    <Content Include="admintema\assets\img\logos\gray-logos\logo-nasa.svg" />
+    <Content Include="admintema\assets\img\logos\gray-logos\logo-netflix.svg" />
+    <Content Include="admintema\assets\img\logos\gray-logos\logo-pinterest.svg" />
+    <Content Include="admintema\assets\img\logos\gray-logos\logo-spotify.svg" />
+    <Content Include="admintema\assets\img\logos\gray-logos\logo-vodafone.svg" />
+    <Content Include="admintema\assets\img\logos\mastercard.png" />
+    <Content Include="admintema\assets\img\logos\visa.png" />
+    <Content Include="admintema\assets\img\marie.jpg" />
+    <Content Include="admintema\assets\img\meeting.jpg" />
+    <Content Include="admintema\assets\img\office-dark.jpg" />
+    <Content Include="admintema\assets\img\product-12.jpg" />
+    <Content Include="admintema\assets\img\products\product-1-min.jpg" />
+    <Content Include="admintema\assets\img\products\product-11.jpg" />
+    <Content Include="admintema\assets\img\products\product-2-min.jpg" />
+    <Content Include="admintema\assets\img\products\product-3-min.jpg" />
+    <Content Include="admintema\assets\img\products\product-4-min.jpg" />
+    <Content Include="admintema\assets\img\products\product-5-min.jpg" />
+    <Content Include="admintema\assets\img\products\product-6-min.jpg" />
+    <Content Include="admintema\assets\img\products\product-7-min.jpg" />
+    <Content Include="admintema\assets\img\products\product-details-1.jpg" />
+    <Content Include="admintema\assets\img\products\product-details-2.jpg" />
+    <Content Include="admintema\assets\img\products\product-details-3.jpg" />
+    <Content Include="admintema\assets\img\products\product-details-4.jpg" />
+    <Content Include="admintema\assets\img\products\product-details-5.jpg" />
+    <Content Include="admintema\assets\img\shapes\pattern-lines.svg" />
+    <Content Include="admintema\assets\img\shapes\waves-white.svg" />
+    <Content Include="admintema\assets\img\small-logos\bootstrap.svg" />
+    <Content Include="admintema\assets\img\small-logos\creative-tim.svg" />
+    <Content Include="admintema\assets\img\small-logos\devto.svg" />
+    <Content Include="admintema\assets\img\small-logos\github.svg" />
+    <Content Include="admintema\assets\img\small-logos\google-webdev.svg" />
+    <Content Include="admintema\assets\img\small-logos\icon-bulb.svg" />
+    <Content Include="admintema\assets\img\small-logos\icon-sun-cloud.png" />
+    <Content Include="admintema\assets\img\small-logos\logo-asana.svg" />
+    <Content Include="admintema\assets\img\small-logos\logo-atlassian.svg" />
+    <Content Include="admintema\assets\img\small-logos\logo-invision.svg" />
+    <Content Include="admintema\assets\img\small-logos\logo-jira.svg" />
+    <Content Include="admintema\assets\img\small-logos\logo-slack.svg" />
+    <Content Include="admintema\assets\img\small-logos\logo-spotify.svg" />
+    <Content Include="admintema\assets\img\small-logos\logo-xd.svg" />
+    <Content Include="admintema\assets\img\team-1.jpg" />
+    <Content Include="admintema\assets\img\team-2.jpg" />
+    <Content Include="admintema\assets\img\team-3.jpg" />
+    <Content Include="admintema\assets\img\team-4.jpg" />
+    <Content Include="admintema\assets\img\team-5.jpg" />
+    <Content Include="admintema\assets\img\tesla-model-s.png" />
+    <Content Include="admintema\assets\img\vr-bg.jpg" />
+    <Content Include="admintema\assets\js\core\bootstrap.bundle.min.js" />
+    <Content Include="admintema\assets\js\core\bootstrap.min.js" />
+    <Content Include="admintema\assets\js\core\popper.min.js" />
+    <Content Include="admintema\assets\js\material-dashboard.js" />
+    <Content Include="admintema\assets\js\material-dashboard.min.js" />
+    <Content Include="admintema\assets\js\plugins\bootstrap-notify.js" />
+    <Content Include="admintema\assets\js\plugins\Chart.extension.js" />
+    <Content Include="admintema\assets\js\plugins\chartjs.min.js" />
+    <Content Include="admintema\assets\js\plugins\perfect-scrollbar.min.js" />
+    <Content Include="admintema\assets\js\plugins\smooth-scrollbar.min.js" />
+    <Content Include="admintema\assets\js\plugins\world.js" />
+    <Content Include="admintema\docs\documentation.html" />
+    <Content Include="admintema\gulpfile.js" />
+    <Content Include="admintema\index.html" />
+    <Content Include="admintema\pages\billing.html" />
+    <Content Include="admintema\pages\dashboard.html" />
+    <Content Include="admintema\pages\icons.html" />
+    <Content Include="admintema\pages\map.html" />
+    <Content Include="admintema\pages\notifications.html" />
+    <Content Include="admintema\pages\profile.html" />
+    <Content Include="admintema\pages\rtl.html" />
+    <Content Include="admintema\pages\sign-in.html" />
+    <Content Include="admintema\pages\sign-up.html" />
+    <Content Include="admintema\pages\tables.html" />
+    <Content Include="admintema\pages\template.html" />
+    <Content Include="admintema\pages\typography.html" />
+    <Content Include="admintema\pages\virtual-reality.html" />
+    <Content Include="admintema\template.html" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="musteritema\about.html" />
+    <Content Include="musteritema\assets\css\animate.min.css" />
+    <Content Include="musteritema\assets\css\bootstrap.min.css" />
+    <Content Include="musteritema\assets\css\fontawesome-all.min.css" />
+    <Content Include="musteritema\assets\css\gijgo.css" />
+    <Content Include="musteritema\assets\css\magnific-popup.css" />
+    <Content Include="musteritema\assets\css\main.css" />
+    <Content Include="musteritema\assets\css\nice-select.css" />
+    <Content Include="musteritema\assets\css\owl.carousel.min.css" />
+    <Content Include="musteritema\assets\css\responsive.css" />
+    <Content Include="musteritema\assets\css\slick.css" />
+    <Content Include="musteritema\assets\css\slicknav.css" />
+    <Content Include="musteritema\assets\css\style.css" />
+    <Content Include="musteritema\assets\css\themify-icons.css" />
+    <Content Include="musteritema\assets\fonts\ElegantIcons.svg" />
+    <Content Include="musteritema\assets\fonts\fa-brands-400.svg" />
+    <Content Include="musteritema\assets\fonts\fa-regular-400.svg" />
+    <Content Include="musteritema\assets\fonts\fa-solid-900.svg" />
+    <Content Include="musteritema\assets\fonts\gijgo-material.svg" />
+    <Content Include="musteritema\assets\fonts\themify.svg" />
+    <Content Include="musteritema\assets\img\about\about_lft.png" />
+    <Content Include="musteritema\assets\img\about\about_right.png" />
+    <Content Include="musteritema\assets\img\about\pet_care.png" />
+    <Content Include="musteritema\assets\img\adapt_icon\1.png" />
+    <Content Include="musteritema\assets\img\adapt_icon\1.svg" />
+    <Content Include="musteritema\assets\img\adapt_icon\2.png" />
+    <Content Include="musteritema\assets\img\adapt_icon\3.png" />
+    <Content Include="musteritema\assets\img\banner\banner.png" />
+    <Content Include="musteritema\assets\img\banner\bradcam.png" />
+    <Content Include="musteritema\assets\img\banner\contact_bg.png" />
+    <Content Include="musteritema\assets\img\banner\dog.png" />
+    <Content Include="musteritema\assets\img\banner\img.png" />
+    <Content Include="musteritema\assets\img\blog\author.png" />
+    <Content Include="musteritema\assets\img\blog\blog_1.png" />
+    <Content Include="musteritema\assets\img\blog\blog_2.png" />
+    <Content Include="musteritema\assets\img\blog\blog_3.png" />
+    <Content Include="musteritema\assets\img\blog\blog_4.png" />
+    <Content Include="musteritema\assets\img\blog\learn_about_bg.png" />
+    <Content Include="musteritema\assets\img\blog\single_blog_1.png" />
+    <Content Include="musteritema\assets\img\blog\single_blog_2.png" />
+    <Content Include="musteritema\assets\img\blog\single_blog_3.png" />
+    <Content Include="musteritema\assets\img\blog\single_blog_4.png" />
+    <Content Include="musteritema\assets\img\blog\single_blog_5.png" />
+    <Content Include="musteritema\assets\img\blog\slide_thumb_1.png" />
+    <Content Include="musteritema\assets\img\comment\comment_1.png" />
+    <Content Include="musteritema\assets\img\comment\comment_2.png" />
+    <Content Include="musteritema\assets\img\comment\comment_3.png" />
+    <Content Include="musteritema\assets\img\customer\customar1.png" />
+    <Content Include="musteritema\assets\img\customer\customar2.png" />
+    <Content Include="musteritema\assets\img\customer\customar_bg.png" />
+    <Content Include="musteritema\assets\img\customer\cutomer.jpg" />
+    <Content Include="musteritema\assets\img\dining\dining-img.jpg" />
+    <Content Include="musteritema\assets\img\dining\dining-img.png" />
+    <Content Include="musteritema\assets\img\dining\dining-img2.jpg" />
+    <Content Include="musteritema\assets\img\dining\dining-img2.png" />
+    <Content Include="musteritema\assets\img\elements\a.jpg" />
+    <Content Include="musteritema\assets\img\elements\a2.jpg" />
+    <Content Include="musteritema\assets\img\elements\d.jpg" />
+    <Content Include="musteritema\assets\img\elements\disabled-check.png" />
+    <Content Include="musteritema\assets\img\elements\disabled-radio.png" />
+    <Content Include="musteritema\assets\img\elements\f1.jpg" />
+    <Content Include="musteritema\assets\img\elements\f2.jpg" />
+    <Content Include="musteritema\assets\img\elements\f3.jpg" />
+    <Content Include="musteritema\assets\img\elements\f4.jpg" />
+    <Content Include="musteritema\assets\img\elements\f5.jpg" />
+    <Content Include="musteritema\assets\img\elements\f6.jpg" />
+    <Content Include="musteritema\assets\img\elements\f7.jpg" />
+    <Content Include="musteritema\assets\img\elements\f8.jpg" />
+    <Content Include="musteritema\assets\img\elements\g1.jpg" />
+    <Content Include="musteritema\assets\img\elements\g2.jpg" />
+    <Content Include="musteritema\assets\img\elements\g3.jpg" />
+    <Content Include="musteritema\assets\img\elements\g4.jpg" />
+    <Content Include="musteritema\assets\img\elements\g5.jpg" />
+    <Content Include="musteritema\assets\img\elements\g6.jpg" />
+    <Content Include="musteritema\assets\img\elements\g7.jpg" />
+    <Content Include="musteritema\assets\img\elements\g8.jpg" />
+    <Content Include="musteritema\assets\img\elements\primary-check.png" />
+    <Content Include="musteritema\assets\img\elements\primary-radio.png" />
+    <Content Include="musteritema\assets\img\elements\success-check.png" />
+    <Content Include="musteritema\assets\img\elements\success-radio.png" />
+    <Content Include="musteritema\assets\img\favicon.ico" />
+    <Content Include="musteritema\assets\img\gallery\1.png" />
+    <Content Include="musteritema\assets\img\gallery\2.png" />
+    <Content Include="musteritema\assets\img\gallery\3.png" />
+    <Content Include="musteritema\assets\img\gallery\gallery1.jpg" />
+    <Content Include="musteritema\assets\img\gallery\gallery2.jpg" />
+    <Content Include="musteritema\assets\img\gallery\gallery3.jpg" />
+    <Content Include="musteritema\assets\img\gallery\video.png" />
+    <Content Include="musteritema\assets\img\hero\aboutpage_hero.jpg" />
+    <Content Include="musteritema\assets\img\hero\contact_hero.jpg" />
+    <Content Include="musteritema\assets\img\hero\footer_logo.png" />
+    <Content Include="musteritema\assets\img\hero\h1_hero.jpg" />
+    <Content Include="musteritema\assets\img\hero\roomspage_hero.jpg" />
+    <Content Include="musteritema\assets\img\hero\servicespage_hero.jpg" />
+    <Content Include="musteritema\assets\img\logo\date-picker-icon.png" />
+    <Content Include="musteritema\assets\img\logo\form-iocn.jpg" />
+    <Content Include="musteritema\assets\img\logo\logo.png" />
+    <Content Include="musteritema\assets\img\logo\logo2_footer.png" />
+    <Content Include="musteritema\assets\img\logo\select-items-icon.jpg" />
+    <Content Include="musteritema\assets\img\logo\testimonial.png" />
+    <Content Include="musteritema\assets\img\offers\1.png" />
+    <Content Include="musteritema\assets\img\offers\2.png" />
+    <Content Include="musteritema\assets\img\offers\3.png" />
+    <Content Include="musteritema\assets\img\our_blog\blog-comments-icon.jpg" />
+    <Content Include="musteritema\assets\img\our_blog\blog-img1.jpg" />
+    <Content Include="musteritema\assets\img\our_blog\blog-img2.jpg" />
+    <Content Include="musteritema\assets\img\our_blog\blog-img3.jpg" />
+    <Content Include="musteritema\assets\img\post\next.png" />
+    <Content Include="musteritema\assets\img\post\post_1.png" />
+    <Content Include="musteritema\assets\img\post\post_10.png" />
+    <Content Include="musteritema\assets\img\post\post_2.png" />
+    <Content Include="musteritema\assets\img\post\post_3.png" />
+    <Content Include="musteritema\assets\img\post\post_4.png" />
+    <Content Include="musteritema\assets\img\post\post_5.png" />
+    <Content Include="musteritema\assets\img\post\post_6.png" />
+    <Content Include="musteritema\assets\img\post\post_7.png" />
+    <Content Include="musteritema\assets\img\post\post_8.png" />
+    <Content Include="musteritema\assets\img\post\post_9.png" />
+    <Content Include="musteritema\assets\img\post\preview.png" />
+    <Content Include="musteritema\assets\img\prising\1.png" />
+    <Content Include="musteritema\assets\img\prising\10.png" />
+    <Content Include="musteritema\assets\img\prising\2.png" />
+    <Content Include="musteritema\assets\img\prising\3.png" />
+    <Content Include="musteritema\assets\img\prising\4.png" />
+    <Content Include="musteritema\assets\img\prising\5.png" />
+    <Content Include="musteritema\assets\img\prising\6.png" />
+    <Content Include="musteritema\assets\img\prising\7.png" />
+    <Content Include="musteritema\assets\img\prising\8.png" />
+    <Content Include="musteritema\assets\img\prising\9.png" />
+    <Content Include="musteritema\assets\img\rooms\room1.jpg" />
+    <Content Include="musteritema\assets\img\rooms\room2.jpg" />
+    <Content Include="musteritema\assets\img\rooms\room3.jpg" />
+    <Content Include="musteritema\assets\img\rooms\room4.jpg" />
+    <Content Include="musteritema\assets\img\rooms\room5.jpg" />
+    <Content Include="musteritema\assets\img\rooms\room6.jpg" />
+    <Content Include="musteritema\assets\img\service\1.png" />
+    <Content Include="musteritema\assets\img\service\2.png" />
+    <Content Include="musteritema\assets\img\service\3.png" />
+    <Content Include="musteritema\assets\img\service\service_icon_1.png" />
+    <Content Include="musteritema\assets\img\service\service_icon_2.png" />
+    <Content Include="musteritema\assets\img\service\service_icon_3.png" />
+    <Content Include="musteritema\assets\img\service\service_icon_bg_1.png" />
+    <Content Include="musteritema\assets\img\team\1.png" />
+    <Content Include="musteritema\assets\img\team\2.png" />
+    <Content Include="musteritema\assets\img\team\3.png" />
+    <Content Include="musteritema\assets\img\testmonial\1.png" />
+    <Content Include="musteritema\assets\js\animated.headline.js" />
+    <Content Include="musteritema\assets\js\bootstrap.min.js" />
+    <Content Include="musteritema\assets\js\contact.js" />
+    <Content Include="musteritema\assets\js\gijgo.min.js" />
+    <Content Include="musteritema\assets\js\jquery.ajaxchimp.min.js" />
+    <Content Include="musteritema\assets\js\jquery.form.js" />
+    <Content Include="musteritema\assets\js\jquery.magnific-popup.js" />
+    <Content Include="musteritema\assets\js\jquery.nice-select.min.js" />
+    <Content Include="musteritema\assets\js\jquery.paroller.min.js" />
+    <Content Include="musteritema\assets\js\jquery.scrollUp.min.js" />
+    <Content Include="musteritema\assets\js\jquery.slicknav.min.js" />
+    <Content Include="musteritema\assets\js\jquery.sticky.js" />
+    <Content Include="musteritema\assets\js\jquery.validate.min.js" />
+    <Content Include="musteritema\assets\js\mail-script.js" />
+    <Content Include="musteritema\assets\js\main.js" />
+    <Content Include="musteritema\assets\js\one-page-nav-min.js" />
+    <Content Include="musteritema\assets\js\owl.carousel.min.js" />
+    <Content Include="musteritema\assets\js\plugins.js" />
+    <Content Include="musteritema\assets\js\popper.min.js" />
+    <Content Include="musteritema\assets\js\slick.min.js" />
+    <Content Include="musteritema\assets\js\slicknav.css" />
+    <Content Include="musteritema\assets\js\vendor\jquery-1.12.4.min.js" />
+    <Content Include="musteritema\assets\js\vendor\modernizr-3.5.0.min.js" />
+    <Content Include="musteritema\assets\js\wow.min.js" />
+    <Content Include="musteritema\blog.html" />
+    <Content Include="musteritema\contact.html" />
+    <Content Include="musteritema\contact_process.php" />
+    <Content Include="musteritema\elements.html" />
+    <Content Include="musteritema\index.html" />
+    <Content Include="musteritema\main.html" />
+    <Content Include="musteritema\Marian -Doc\css\font-awesome.min.css" />
+    <Content Include="musteritema\Marian -Doc\css\main.css" />
+    <Content Include="musteritema\Marian -Doc\css\normalize.min.css" />
+    <Content Include="musteritema\Marian -Doc\fonts\fontawesome-webfont.svg" />
+    <Content Include="musteritema\Marian -Doc\img\logo.png" />
+    <Content Include="musteritema\Marian -Doc\index.html" />
+    <Content Include="musteritema\Marian -Doc\js\custom.js" />
+    <Content Include="musteritema\Marian -Doc\js\jquery-1.11.0.min.js" />
+    <Content Include="musteritema\Marian -Doc\js\jquery.nav.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shAutoloader.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushAppleScript.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushAS3.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushBash.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushColdFusion.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushCpp.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushCSharp.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushCss.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushDelphi.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushDiff.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushErlang.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushGroovy.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushJava.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushJavaFX.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushJScript.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushPerl.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushPhp.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushPlain.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushPowerShell.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushPython.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushRuby.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushSass.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushScala.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushSql.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushVb.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shBrushXml.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shCore.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\scripts\shLegacy.js" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shCore.css" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shCoreDefault.css" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shCoreDjango.css" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shCoreEclipse.css" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shCoreEmacs.css" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shCoreFadeToGrey.css" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shCoreMDUltra.css" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shCoreMidnight.css" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shCoreRDark.css" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shThemeDefault.css" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shThemeDjango.css" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shThemeEclipse.css" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shThemeEmacs.css" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shThemeFadeToGrey.css" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shThemeMDUltra.css" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shThemeMidnight.css" />
+    <Content Include="musteritema\Marian -Doc\syntax-highlighter\styles\shThemeRDark.css" />
+    <Content Include="musteritema\readme.txt" />
+    <Content Include="musteritema\rooms.html" />
+    <Content Include="musteritema\services.html" />
+    <Content Include="musteritema\single-blog.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MusteriHesabiController.cs" />
+    <Compile Include="Controllers\MusteriKayitController.cs" />
+    <Compile Include="Controllers\OdalarController.cs" />
+    <Compile Include="Controllers\ServislerController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MusteriHesabi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MusteriKayit.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Odalar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Servisler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserMaster.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="admintema\.github\workflows\main.yml" />
+    <Content Include="admintema\assets\css\material-dashboard.css.map" />
+    <Content Include="admintema\assets\fonts\nucleo-icons.eot" />
+    <Content Include="admintema\assets\fonts\nucleo-icons.ttf" />
+    <Content Include="admintema\assets\fonts\nucleo-icons.woff" />
+    <Content Include="admintema\assets\fonts\nucleo-icons.woff2" />
+    <Content Include="admintema\assets\fonts\nucleo.eot" />
+    <Content Include="admintema\assets\fonts\nucleo.ttf" />
+    <Content Include="admintema\assets\fonts\nucleo.woff" />
+    <Content Include="admintema\assets\fonts\nucleo.woff2" />
+    <Content Include="admintema\assets\js\material-dashboard.js.map" />
+    <Content Include="admintema\assets\scss\material-dashboard.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\bootstrap-grid.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\bootstrap-utilities.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\bootstrap.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\forms\_floating-labels.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\forms\_form-check.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\forms\_form-control.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\forms\_form-range.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\forms\_form-select.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\forms\_form-text.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\forms\_input-group.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\forms\_labels.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\forms\_validation.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\helpers\_clearfix.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\helpers\_color-bg.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\helpers\_colored-links.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\helpers\_position.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\helpers\_ratio.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\helpers\_stacks.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\helpers\_stretched-link.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\helpers\_text-truncation.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\helpers\_visually-hidden.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\helpers\_vr.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_alert.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_backdrop.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_banner.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_buttons.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_caret.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_color-scheme.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_container.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_deprecate.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_forms.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_gradients.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_grid.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_image.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_list-group.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_lists.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_pagination.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_resize.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_table-variants.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_transition.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_utilities.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\mixins\_visually-hidden.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\utilities\_api.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\vendor\_rfs.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_accordion.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_alert.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_badge.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_breadcrumb.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_button-group.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_buttons.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_card.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_carousel.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_close.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_containers.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_dropdown.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_forms.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_functions.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_grid.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_helpers.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_images.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_list-group.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_maps.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_mixins.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_modal.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_nav.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_navbar.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_offcanvas.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_pagination.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_placeholders.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_popover.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_progress.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_reboot.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_root.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_spinners.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_tables.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_toasts.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_tooltip.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_transitions.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_type.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_utilities.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\bootstrap\_variables.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\cards\card-background.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\cards\card-rotate.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\custom\_styles.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\custom\_variables.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\forms\_form-check.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\forms\_form-select.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\forms\_form-switch.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\forms\_forms.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\forms\_input-group.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\forms\_inputs.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\forms\_labels.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\mixins\mixins.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\mixins\_badge.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\mixins\_buttons.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\mixins\_colored-shadows.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\mixins\_hover.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\mixins\_social-buttons.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\mixins\_vendor.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\plugins\free\plugins.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\plugins\free\_flatpickr.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\plugins\free\_nouislider.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\plugins\free\_perfect-scrollbar.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\plugins\free\_prism.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\theme.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_animations.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_avatars.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_badge.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_breadcrumb.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_cards-extend.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_cards.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_choices.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_dark-version.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_dropdowns.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_fixed-plugin.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_form-switch.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_full-calendar.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_header.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_info-areas.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_misc-extend.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_misc.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_navbar-vertical.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_navbar.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_pagination.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_ripple.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_rtl.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_social-buttons.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_table.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_timeline.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_utilities-extend.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_utilities.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\variables\_virtual-reality.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_alert.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_avatars.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_badge.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_breadcrumbs.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_buttons.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_cards.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_dark-version.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_dropdown.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_dropup.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_fixed-plugin.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_footer.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_forms.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_gradients.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_header.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_icons.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_info-areas.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_misc.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_nav.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_navbar-vertical.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_navbar.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_pagination.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_popovers.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_progress.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_ripple.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_rtl.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_social-buttons.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_tables.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_tilt.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_timeline.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_tooltips.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_typography.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_utilities-extend.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_utilities.scss" />
+    <Content Include="admintema\assets\scss\material-dashboard\_variables.scss" />
+    <Content Include="admintema\CHANGELOG.md" />
+    <Content Include="admintema\composer.json" />
+    <Content Include="admintema\ISSUE_TEMPLATE.md" />
+    <Content Include="admintema\LICENSE.md" />
+    <Content Include="admintema\package.json" />
+    <Content Include="admintema\README.md" />
+    <Content Include="musteritema\assets\css\main.map" />
+    <Content Include="musteritema\assets\fonts\ElegantIcons.eot" />
+    <Content Include="musteritema\assets\fonts\ElegantIcons.ttf" />
+    <Content Include="musteritema\assets\fonts\ElegantIcons.woff" />
+    <Content Include="musteritema\assets\fonts\fa-brands-400.eot" />
+    <Content Include="musteritema\assets\fonts\fa-brands-400.ttf" />
+    <Content Include="musteritema\assets\fonts\fa-brands-400.woff" />
+    <Content Include="musteritema\assets\fonts\fa-brands-400.woff2" />
+    <Content Include="musteritema\assets\fonts\fa-regular-400.eot" />
+    <Content Include="musteritema\assets\fonts\fa-regular-400.ttf" />
+    <Content Include="musteritema\assets\fonts\fa-regular-400.woff" />
+    <Content Include="musteritema\assets\fonts\fa-regular-400.woff2" />
+    <Content Include="musteritema\assets\fonts\fa-solid-900.eot" />
+    <Content Include="musteritema\assets\fonts\fa-solid-900.ttf" />
+    <Content Include="musteritema\assets\fonts\fa-solid-900.woff" />
+    <Content Include="musteritema\assets\fonts\fa-solid-900.woff2" />
+    <Content Include="musteritema\assets\fonts\gijgo-material.eot" />
+    <Content Include="musteritema\assets\fonts\gijgo-material.ttf" />
+    <Content Include="musteritema\assets\fonts\gijgo-material.woff" />
+    <Content Include="musteritema\assets\fonts\themify.eot" />
+    <Content Include="musteritema\assets\fonts\themify.ttf" />
+    <Content Include="musteritema\assets\fonts\themify.woff" />
+    <Content Include="musteritema\assets\scss\main.scss" />
+    <Content Include="musteritema\assets\scss\services.scss" />
+    <Content Include="musteritema\assets\scss\_blog.scss" />
+    <Content Include="musteritema\assets\scss\_blog_page.scss" />
+    <Content Include="musteritema\assets\scss\_booking.scss" />
+    <Content Include="musteritema\assets\scss\_bradcam.scss" />
+    <Content Include="musteritema\assets\scss\_color.scss" />
+    <Content Include="musteritema\assets\scss\_common.scss" />
+    <Content Include="musteritema\assets\scss\_contact.scss" />
+    <Content Include="musteritema\assets\scss\_customer.scss" />
+    <Content Include="musteritema\assets\scss\_dining.scss" />
+    <Content Include="musteritema\assets\scss\_elements.scss" />
+    <Content Include="musteritema\assets\scss\_extend.scss" />
+    <Content Include="musteritema\assets\scss\_footer.scss" />
+    <Content Include="musteritema\assets\scss\_gallery.scss" />
+    <Content Include="musteritema\assets\scss\_h1-hero.scss" />
+    <Content Include="musteritema\assets\scss\_headerMenu.scss" />
+    <Content Include="musteritema\assets\scss\_mixins.scss" />
+    <Content Include="musteritema\assets\scss\_overlay.scss" />
+    <Content Include="musteritema\assets\scss\_reset.scss" />
+    <Content Include="musteritema\assets\scss\_room.scss" />
+    <Content Include="musteritema\assets\scss\_testimonial.scss" />
+    <Content Include="musteritema\assets\scss\_variables.scss" />
+    <Content Include="musteritema\Marian -Doc\fonts\fontawesome-webfont.eot" />
+    <Content Include="musteritema\Marian -Doc\fonts\fontawesome-webfont.ttf" />
+    <Content Include="musteritema\Marian -Doc\fonts\fontawesome-webfont.woff" />
+    <Content Include="musteritema\Marian -Doc\fonts\FontAwesome.otf" />
+    <Content Include="musteritema\Marian -Doc\img\Thumbs.db" />
+    <Content Include="musteritema\package-lock.json" />
+    <Content Include="musteritema\package.json" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Views\Shared1\_LayoutPageadmin.cshtml" />
+    <Content Include="Views\Shared1\_LayoutPagegiris.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Odalar\Index.cshtml" />
+    <Content Include="Views\Odalar\Yeni.cshtml" />
+    <Content Include="Views\Odalar\Duzenle.cshtml" />
+    <Content Include="Views\Servisler\Index.cshtml" />
+    <Content Include="Views\Servisler\Yeni.cshtml" />
+    <Content Include="Views\Servisler\Duzenle.cshtml" />
+    <Content Include="Views\MusteriKayit\Index.cshtml" />
+    <Content Include="Views\MusteriKayit\Yeni.cshtml" />
+    <Content Include="Views\MusteriKayit\Duzenle.cshtml" />
+    <Content Include="Views\MusteriHesabi\Index.cshtml" />
+    <Content Include="Views\MusteriHesabi\Yeni.cshtml" />
+    <Content Include="Views\MusteriHesabi\Duzenle.cshtml" />
+    <Content Include="Views\Servisler\Sil.cshtml" />
+    <Content Include="Views\Odalar\Sil.cshtml" />
+    <Content Include="Views\MusteriKayit\Sil.cshtml" />
+    <Content Include="Views\MusteriHesabi\Sil.cshtml" />
+    <Content Include="Views\Shared1\_LayoutPageLogin.cshtml" />
+    <Content Include="Views\Accounts\Login.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51478</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44346/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

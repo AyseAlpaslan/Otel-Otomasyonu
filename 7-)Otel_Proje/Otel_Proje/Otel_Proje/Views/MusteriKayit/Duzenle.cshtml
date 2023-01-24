@@ -1,0 +1,80 @@
+﻿@model Otel_Proje.Models.MusteriKayit
+@{
+    ViewBag.Title = "Duzenle";
+    Layout = "~/Views/Shared1/_LayoutPageadmin.cshtml";
+}
+<h2>Müşteri Duzenle</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>SERVİS DÜZENLEME SAYFASI</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Mno)
+    @*personel no'yu gizliyor. tag yaptığımız kısım*@
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MAdi, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.MAdi, new { htmlAttributes = new { @class = "form-control alert-warning" } })
+            @Html.ValidationMessageFor(model => model.MAdi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MSoyadi, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.MSoyadi, new { htmlAttributes = new { @class = "form-control alert-warning" } })
+            @Html.ValidationMessageFor(model => model.MSoyadi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MCinsiyet, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.MCinsiyet, new { htmlAttributes = new { @class = "form-control alert-warning" } })
+            @Html.ValidationMessageFor(model => model.MCinsiyet, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MAdres, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.MAdres, new { htmlAttributes = new { @class = "form-control alert-warning" } })
+            @Html.ValidationMessageFor(model => model.MAdres, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Telefon, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.Telefon, new { htmlAttributes = new { @class = "form-control alert-warning" } })
+            @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+
+    <br />
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("AnaSayfa", "Index")
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
